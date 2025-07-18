@@ -1,0 +1,156 @@
+.container-fluid {
+  background: #f4f6f8;
+  min-height: 100vh;
+
+  .col-8 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0 2rem;
+  }
+
+  .card {
+    border: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    background: #ffffff;
+
+    .card-header {
+      background: linear-gradient(90deg, #388e3c, #66bb6a);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      border-radius: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        color: #fff;
+      }
+    }
+
+    .card-body {
+      padding: 2rem 1rem;
+
+      ::ng-deep nz-table {
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow-x: auto;
+        padding: 1rem;
+
+        .ant-table {
+          font-family: "Segoe UI", Roboto, sans-serif;
+          font-size: 14px;
+          color: #333;
+          table-layout: auto; // Allow columns to resize
+
+          .ant-table-tbody > tr > td,
+          .ant-table-thead > tr > th {
+            white-space: nowrap;
+            word-wrap: break-word;
+          }
+
+          .ant-table-thead > tr > th {
+            background-color: #f1f3f6;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 14px 18px;
+            border-bottom: 2px solid #dcdfe6;
+            text-align: left;
+            white-space: nowrap;
+          }
+
+          .ant-table-tbody > tr {
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid #f0f0f0;
+
+            &:hover {
+              background-color: #f9fbfd;
+            }
+
+            &:nth-child(even) {
+              background-color: #fcfcfc;
+            }
+
+            > td {
+              padding: 14px 18px;
+              color: #444;
+              vertical-align: middle;
+            }
+          }
+
+          .action-buttons {
+            display: flex;
+            flex-wrap: wrap; // Allow buttons to wrap to next line on small screens
+            gap: 0.5rem;
+
+            button[nz-button] {
+              min-width: auto;
+              padding: 6px 12px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.1);
+        accent-color: #4caf50;
+        cursor: pointer;
+      }
+
+      a {
+        cursor: pointer;
+        transition: color 0.3s ease;
+        font-weight: 500;
+        text-decoration: none;
+
+        &.text-primary {
+          color: #1976d2;
+
+          &:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+          }
+        }
+
+        &.text-danger {
+          color: #e53935;
+
+          &:hover {
+            color: #b71c1c;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); // semi-transparent background
+  z-index: 9999; // high enough to overlay everything
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  app-add-employee {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+}

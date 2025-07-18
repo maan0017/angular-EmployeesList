@@ -1,5 +1,9 @@
 # EmployeeManager
 
+## Project Summary
+This is a simple browser based project , which show employess table and allow to perform CURD operations,
+Here,Browser's local storage is used to store the employees data
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
 
 ## Development server
@@ -8,6 +12,12 @@ To start a local development server, run:
 
 ```bash
 ng serve
+```
+
+or 
+
+```bash
+ng serve --hrm --host 0.0.0.0
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.

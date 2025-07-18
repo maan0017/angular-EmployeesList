@@ -1,0 +1,135 @@
+<div *ngIf="isBrowser()">
+  <!-- Close Button -->
+  <div class="form-actions">
+    <button
+      type="button"
+      nz-button
+      nzType="primary"
+      nzDanger
+      (click)="triggerParentCloseAddEmployeeFunction()"
+    >
+      Close
+    </button>
+  </div>
+
+  <!-- Employee Form -->
+  <form
+    nz-form
+    [formGroup]="validateForm"
+    (ngSubmit)="submitForm()"
+    class="employee-form"
+  >
+    <!-- Name -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired
+        >Name</nz-form-label
+      >
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        [nzErrorTip]="'Please enter employee name!'"
+      >
+        <input
+          nz-input
+          id="name"
+          placeholder="Enter name..."
+          formControlName="name"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- Email -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email" nzRequired
+        >Email</nz-form-label
+      >
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        [nzErrorTip]="'Please enter valid employee email!'"
+      >
+        <input
+          nz-input
+          type="email"
+          id="email"
+          placeholder="Enter email..."
+          formControlName="email"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- Phone -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired
+        >Phone</nz-form-label
+      >
+      <nz-form-control
+        [nzSm]="14"
+        [nzXs]="24"
+        [nzErrorTip]="'Please enter valid employee phone number!'"
+      >
+        <nz-input-group>
+          <input
+            nz-input
+            type="tel"
+            id="phone"
+            placeholder="Enter phone number..."
+            formControlName="phone"
+            maxlength="10"
+            appNumberOnly
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- Address -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="address"
+        >Address</nz-form-label
+      >
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input
+          nz-input
+          id="address"
+          placeholder="Enter address..."
+          formControlName="address"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- City -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="city">City</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input
+          nz-input
+          id="city"
+          placeholder="Enter city..."
+          formControlName="city"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- State -->
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="state">State</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input
+          nz-input
+          id="state"
+          placeholder="Enter state..."
+          formControlName="state"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- Submit Button -->
+    <nz-form-item>
+      <nz-form-control [nzSm]="14" [nzXs]="24" [nzOffset]="6">
+        <button type="submit" nz-button nzType="primary" htmlType="submit">
+          {{ employee.id ? "Update Employee" : "Add Employee" }}
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
