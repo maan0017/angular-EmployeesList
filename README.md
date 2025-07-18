@@ -17,7 +17,7 @@ ng serve
 or 
 
 ```bash
-ng serve --hrm --host 0.0.0.0
+ng serve --hmr --host 0.0.0.0
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
